@@ -32,10 +32,14 @@ while i ==0 :
 print(db)
 
 
-duration_s,duration_e = with_moviepy('full.mp4')
+
 for path in db:
+    duration_s, duration_e = with_moviepy(path)
     cutter(path)
 
+
+
+k = input("press enter to close")
 
 
 
