@@ -13,9 +13,10 @@ def with_moviepy(filename):
 
 def cutter(file_name):
     clip_name = "clip_"+os.path.basename(file_name)
+    new_path = file_name.replace(os.path.basename(file_name),clip_name)
     from moviepy.video.io.ffmpeg_tools import ffmpeg_extract_subclip
     # ffmpeg_extract_subclip("full.mp4", start_seconds, end_seconds, targetname="cut.mp4")
-    ffmpeg_extract_subclip(file_name, duration_s, duration_e, targetname=clip_name)
+    ffmpeg_extract_subclip(file_name, duration_s, duration_e, targetname=new_path)
 
 db = []
 i = 0
