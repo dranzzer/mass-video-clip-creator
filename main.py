@@ -15,14 +15,21 @@ def cutter(file_name):
     # ffmpeg_extract_subclip("full.mp4", start_seconds, end_seconds, targetname="cut.mp4")
     ffmpeg_extract_subclip(file_name, duration_s, duration_e, targetname=clip_name)
 
+db = []
+i = 0
+while i ==0 :
+    path = input("input path here")
 
-
-
+    if path == "e":
+        break
+    else:
+        db.append(path)
+print(db)
 
 
 duration_s,duration_e = with_moviepy('full.mp4')
-
-cutter("C:/Users/Tharindu/PycharmProjects/video-cutter/full.mp4")
+for path in db:
+    cutter(path)
 
 
 
