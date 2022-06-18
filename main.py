@@ -1,4 +1,6 @@
 import os
+# pip install path.py
+import posixpath
 def with_moviepy(filename):
     from moviepy.editor import VideoFileClip
     clip = VideoFileClip(filename)
@@ -18,8 +20,11 @@ def cutter(file_name):
 db = []
 i = 0
 while i ==0 :
-    path = input("input path here")
+    path = str(input('input path here'))
 
+    path = path.replace('"','')
+
+    path = path.replace(os.sep,posixpath.sep)
     if path == "e":
         break
     else:
